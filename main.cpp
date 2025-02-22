@@ -6,6 +6,7 @@ void imprimirNumeros();
 void imprimirHastaN();
 void sumarPositivos();
 void fibonacciHastaN();
+void sumaHasta100();
 
 int main() {
     int opcion;
@@ -17,6 +18,7 @@ int main() {
         cout << "2. Imprimir los numeros desde 1 hasta un numero ingresado\n";
         cout << "3. Sumar numeros positivos hasta ingresar un numero negativo\n";
         cout << "4. Generar la secuencia de Fibonacci hasta un numero ingresado\n";
+        cout << "5. Ingresar numeros hasta que la suma sea mayor a 100\n";
         cout << "0. Salir\n";
         cout << "Seleccione una opcion: ";
         cin >> opcion;
@@ -26,6 +28,7 @@ int main() {
             case 2: imprimirHastaN(); break;
             case 3: sumarPositivos(); break;
             case 4: fibonacciHastaN(); break;
+            case 5: sumaHasta100(); break;
             case 0: cout << "Saliendo del programa...\n"; break;
             default: cout << "Opcion invalida, intente de nuevo.\n";
         }
@@ -86,4 +89,17 @@ void fibonacciHastaN() {
         b = temp;
     }
     cout << endl;
+}
+
+// Función que solicita números hasta que la suma supere 100
+void sumaHasta100() {
+    int num, suma = 0;
+    cout << "\nIngrese numeros (la suma debe superar 100 para detenerse):\n";
+
+    while (suma <= 100) {
+        cin >> num;
+        suma += num;
+    }
+
+    cout << "La suma final es: " << suma << " (superó 100).\n";
 }
