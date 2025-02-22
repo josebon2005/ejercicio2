@@ -9,6 +9,7 @@ void fibonacciHastaN();
 void sumaHasta100();
 void imprimirParesHastaN();
 void calcularMedia();
+void ingresarHastaCero();
 
 int main() {
     int opcion;
@@ -23,6 +24,7 @@ int main() {
         cout << "5. Ingresar numeros hasta que la suma sea mayor a 100\n";
         cout << "6. Imprimir todos los numeros pares hasta un numero ingresado\n";
         cout << "7. Calcular la media de una serie de numeros ingresados\n";
+        cout << "8. Ingresar numeros hasta que el numero ingresado sea 0\n";
         cout << "0. Salir\n";
         cout << "Seleccione una opcion: ";
         cin >> opcion;
@@ -35,6 +37,7 @@ int main() {
             case 5: sumaHasta100(); break;
             case 6: imprimirParesHastaN(); break;
             case 7: calcularMedia(); break;
+            case 8: ingresarHastaCero(); break;
             case 0: cout << "Saliendo del programa...\n"; break;
             default: cout << "Opcion invalida, intente de nuevo.\n";
         }
@@ -141,5 +144,19 @@ void calcularMedia() {
         cout << "La media de los numeros ingresados es: " << media << endl;
     } else {
         cout << "No se ingresaron numeros para calcular la media.\n";
+    }
+}
+
+// Función que permite ingresar números hasta que el usuario ingrese 0
+void ingresarHastaCero() {
+    int num;
+    cout << "\nIngrese numeros (ingrese 0 para finalizar):\n";
+
+    while (true) {
+        cin >> num;
+        if (num == 0) {
+            cout << "Se ingresó un 0. Terminando el programa.\n";
+            break;
+        }
     }
 }
