@@ -5,6 +5,7 @@ using namespace std;
 void imprimirNumeros();
 void imprimirHastaN();
 void sumarPositivos();
+void fibonacciHastaN();
 
 int main() {
     int opcion;
@@ -15,6 +16,7 @@ int main() {
         cout << "1. Imprimir los numeros del 1 al 20 en orden ascendente\n";
         cout << "2. Imprimir los numeros desde 1 hasta un numero ingresado\n";
         cout << "3. Sumar numeros positivos hasta ingresar un numero negativo\n";
+        cout << "4. Generar la secuencia de Fibonacci hasta un numero ingresado\n";
         cout << "0. Salir\n";
         cout << "Seleccione una opcion: ";
         cin >> opcion;
@@ -23,6 +25,7 @@ int main() {
             case 1: imprimirNumeros(); break;
             case 2: imprimirHastaN(); break;
             case 3: sumarPositivos(); break;
+            case 4: fibonacciHastaN(); break;
             case 0: cout << "Saliendo del programa...\n"; break;
             default: cout << "Opcion invalida, intente de nuevo.\n";
         }
@@ -67,4 +70,20 @@ void sumarPositivos() {
     }
 
     cout << "La suma de los numeros ingresados es: " << suma << endl;
+}
+
+// Función que genera la secuencia de Fibonacci hasta un número ingresado
+void fibonacciHastaN() {
+    int n, a = 0, b = 1, temp;
+    cout << "\nIngrese un numero para generar la secuencia de Fibonacci hasta ese numero: ";
+    cin >> n;
+
+    cout << "Secuencia de Fibonacci: ";
+    while (a <= n) {
+        cout << a << " ";
+        temp = a + b;
+        a = b;
+        b = temp;
+    }
+    cout << endl;
 }
