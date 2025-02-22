@@ -7,6 +7,8 @@ void imprimirHastaN();
 void sumarPositivos();
 void fibonacciHastaN();
 void sumaHasta100();
+void imprimirParesHastaN();
+void calcularMedia();
 
 int main() {
     int opcion;
@@ -19,6 +21,8 @@ int main() {
         cout << "3. Sumar numeros positivos hasta ingresar un numero negativo\n";
         cout << "4. Generar la secuencia de Fibonacci hasta un numero ingresado\n";
         cout << "5. Ingresar numeros hasta que la suma sea mayor a 100\n";
+        cout << "6. Imprimir todos los numeros pares hasta un numero ingresado\n";
+        cout << "7. Calcular la media de una serie de numeros ingresados\n";
         cout << "0. Salir\n";
         cout << "Seleccione una opcion: ";
         cin >> opcion;
@@ -29,6 +33,8 @@ int main() {
             case 3: sumarPositivos(); break;
             case 4: fibonacciHastaN(); break;
             case 5: sumaHasta100(); break;
+            case 6: imprimirParesHastaN(); break;
+            case 7: calcularMedia(); break;
             case 0: cout << "Saliendo del programa...\n"; break;
             default: cout << "Opcion invalida, intente de nuevo.\n";
         }
@@ -102,4 +108,38 @@ void sumaHasta100() {
     }
 
     cout << "La suma final es: " << suma << " (superó 100).\n";
+}
+
+// Función que imprime todos los números pares hasta un número ingresado
+void imprimirParesHastaN() {
+    int n, i = 2;
+    cout << "\nIngrese un numero: ";
+    cin >> n;
+
+    cout << "Numeros pares hasta " << n << ": ";
+    while (i <= n) {
+        cout << i << " ";
+        i += 2;
+    }
+    cout << endl;
+}
+
+// Función que calcula la media de una serie de números ingresados
+void calcularMedia() {
+    int num, suma = 0, contador = 0;
+    cout << "\nIngrese numeros para calcular la media (ingrese 0 para finalizar):\n";
+
+    while (true) {
+        cin >> num;
+        if (num == 0) break;  // Termina cuando el usuario ingresa 0
+        suma += num;
+        contador++;
+    }
+
+    if (contador > 0) {
+        double media = static_cast<double>(suma) / contador;
+        cout << "La media de los numeros ingresados es: " << media << endl;
+    } else {
+        cout << "No se ingresaron numeros para calcular la media.\n";
+    }
 }
