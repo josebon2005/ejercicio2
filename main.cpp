@@ -10,6 +10,7 @@ void sumaHasta100();
 void imprimirParesHastaN();
 void calcularMedia();
 void ingresarHastaCero();
+void imprimirCuadrados();
 
 int main() {
     int opcion;
@@ -25,6 +26,7 @@ int main() {
         cout << "6. Imprimir todos los numeros pares hasta un numero ingresado\n";
         cout << "7. Calcular la media de una serie de numeros ingresados\n";
         cout << "8. Ingresar numeros hasta que el numero ingresado sea 0\n";
+        cout << "9. Imprimir los primeros 10 numeros naturales y su cuadrado\n";
         cout << "0. Salir\n";
         cout << "Seleccione una opcion: ";
         cin >> opcion;
@@ -38,6 +40,7 @@ int main() {
             case 6: imprimirParesHastaN(); break;
             case 7: calcularMedia(); break;
             case 8: ingresarHastaCero(); break;
+            case 9: imprimirCuadrados(); break;
             case 0: cout << "Saliendo del programa...\n"; break;
             default: cout << "Opcion invalida, intente de nuevo.\n";
         }
@@ -158,5 +161,17 @@ void ingresarHastaCero() {
             cout << "Se ingresó un 0. Terminando el programa.\n";
             break;
         }
+    }
+}
+
+// Función que imprime los primeros 10 números naturales y su cuadrado
+void imprimirCuadrados() {
+    int i = 1;
+    cout << "\nNumero  | Cuadrado\n";
+    cout << "-----------------\n";
+
+    while (i <= 10) {
+        cout << i << "       | " << (i * i) << endl;
+        i++;
     }
 }
