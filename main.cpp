@@ -11,6 +11,7 @@ void imprimirParesHastaN();
 void calcularMedia();
 void ingresarHastaCero();
 void imprimirCuadrados();
+void productoPrimeros10();
 
 int main() {
     int opcion;
@@ -27,6 +28,7 @@ int main() {
         cout << "7. Calcular la media de una serie de numeros ingresados\n";
         cout << "8. Ingresar numeros hasta que el numero ingresado sea 0\n";
         cout << "9. Imprimir los primeros 10 numeros naturales y su cuadrado\n";
+        cout << "10. Calcular el producto de los primeros 10 numeros naturales\n";
         cout << "0. Salir\n";
         cout << "Seleccione una opcion: ";
         cin >> opcion;
@@ -41,6 +43,7 @@ int main() {
             case 7: calcularMedia(); break;
             case 8: ingresarHastaCero(); break;
             case 9: imprimirCuadrados(); break;
+            case 10: productoPrimeros10(); break;
             case 0: cout << "Saliendo del programa...\n"; break;
             default: cout << "Opcion invalida, intente de nuevo.\n";
         }
@@ -174,4 +177,15 @@ void imprimirCuadrados() {
         cout << i << "       | " << (i * i) << endl;
         i++;
     }
+}
+
+// Función que calcula el producto de los primeros 10 números naturales
+void productoPrimeros10() {
+    long long producto = 1;
+    int i = 1;
+    while (i <= 10) {
+        producto *= i;
+        i++;
+    }
+    cout << "\nEl producto de los primeros 10 numeros naturales es: " << producto << endl;
 }
